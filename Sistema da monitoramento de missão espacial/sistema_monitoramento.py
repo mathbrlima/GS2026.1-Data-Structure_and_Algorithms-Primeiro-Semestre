@@ -10,8 +10,6 @@ historico = []
 def verificar_temperatura(temp):
     if temp > 80:
         print(Fore.LIGHTYELLOW_EX + f"ALERTA: Superaquecimento! Temperatura em {temp}°" + Style.RESET_ALL)
-    elif temp < 0:
-        print(Fore.LIGHTYELLOW_EX + f"ALERTA: Temperatura muito baixa! {temp}°" + Style.RESET_ALL)
     else:
         print(Fore.LIGHTGREEN_EX + f"Temperatura normal: {temp}°" + Style.RESET_ALL)
 
@@ -24,9 +22,9 @@ def verificar_energia(energia):
 
 # Função para verificar comunicação
 def verificar_comunicacao(com):
-    if com.upper() == "NÃO":
+    if com == "0":
         print(Fore.LIGHTYELLOW_EX + "ALERTA: Falha de comunicação!" + Style.RESET_ALL)
-    elif com.upper() == "SIM":
+    elif com == "1":
         print(Fore.LIGHTGREEN_EX + "Comunicação ativa." + Style.RESET_ALL)
 
 # Função para analisar todos os sensores
@@ -67,7 +65,7 @@ while rodando:
     if opcao == "1":
         temp    = float(input("Digite a temperatura (graus): "))
         energia = float(input("Digite o nível de energia (%): "))
-        com = input("Comunicação ativa? (SIM / NÃO): ")
+        com = input("Comunicação ativa? (0-NÃO / 1-SIM): ")
         historico.append([temp, energia, com])
         print(Fore.LIGHTGREEN_EX + "Dados registrados com sucesso!" + Style.RESET_ALL)
 
