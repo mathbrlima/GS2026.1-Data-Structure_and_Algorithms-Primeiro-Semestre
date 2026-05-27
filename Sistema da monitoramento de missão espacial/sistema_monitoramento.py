@@ -16,7 +16,7 @@ def verificar_temperatura(temp):
 # Função para verificar energia
 def verificar_energia(energia):
     if energia < 20:
-        print(Fore.LIGHTYELLOW_EX + f"ALERTA: Ativar economia de energia! Nivel em {energia:.0f}%" + Style.RESET_ALL)
+        print(Fore.LIGHTYELLOW_EX + f"ALERTA: Ativar economia de energia! Nivel em {energia}%" + Style.RESET_ALL)
     else:
         print(Fore.LIGHTGREEN_EX + f"Energia normal: {energia}%" + Style.RESET_ALL)
 
